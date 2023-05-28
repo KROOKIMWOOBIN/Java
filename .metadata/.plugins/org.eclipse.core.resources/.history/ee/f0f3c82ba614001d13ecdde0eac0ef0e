@@ -1,0 +1,16 @@
+package START_POINT1;
+
+import java.awt.*;
+
+public class FRAME_START
+{
+	public static void main(String[] args)
+	{
+		FRAME_START window = new FRAME_START();
+		
+		window.setSize(300, 500);
+		
+		window.show();
+	}
+
+}

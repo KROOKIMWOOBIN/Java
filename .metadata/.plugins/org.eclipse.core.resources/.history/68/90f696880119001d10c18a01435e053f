@@ -1,0 +1,26 @@
+package START_POINT1;
+
+import javax.swing.JFrame;
+
+public class FRAME_START extends JFrame // 상속받아서 JFrame을 가져온다
+{
+	public static void main(String[] args)
+	{
+		new FRAME_START();
+	}
+	
+	public FRAME_START() {
+		super("창 띄우기 예제"); // setTitle과 같은 기능
+		this.setSize(500, 500);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		/*
+		 * 1. DO_NOTHING_ON_CLOSE 창의 x버튼을 누를때 반응X
+		 * 2. HIDE_ON_CLOSE -- -- -- 창을 숨긴다
+		 * 3. DISPOSE_ON_CLOSE -- -- -- 숨겨서 파기시킨다
+		 * 4. EXIT_ON_CLOSE -- -- -- 애플리케이션 종료
+		*/
+		this.setVisible(true);
+	}
+
+}

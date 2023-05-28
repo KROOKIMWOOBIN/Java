@@ -1,0 +1,11 @@
+package JT_1_2_1;
+
+public class Phone {
+
+	// 변수
+	private String 전화번호;
+	// 생성자
+	
+	//메소드
+
+}

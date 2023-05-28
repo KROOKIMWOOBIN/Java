@@ -1,0 +1,32 @@
+package JAVA_TEST;
+
+public class try_catch 
+{
+	private int[] arr = new int[3];
+	try_catch()
+	{
+		arr[0] = 0;
+		arr[1] = 10;
+		arr[2] = 20;
+	}
+	
+	public void z(int first, int second)
+	{
+		try
+		{
+			System.out.println(arr[first] / arr[second]);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Err");
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		try_catch a = new try_catch();
+		a.z(10, 1);
+	}
+
+}
+

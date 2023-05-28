@@ -1,0 +1,13 @@
+package START_POINT1;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class FRAME_START
+{
+	public static void main(String[] args)
+	{
+		FRAME_START window = new FRAME_START("창에 제목 출력");
+	}
+
+}

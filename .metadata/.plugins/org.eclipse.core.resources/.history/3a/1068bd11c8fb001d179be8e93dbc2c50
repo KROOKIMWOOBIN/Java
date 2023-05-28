@@ -1,0 +1,13 @@
+package StudentManagement;
+
+import java.sql.*;
+import java.awt.*;
+import javax.swing.*;
+
+public class StudentManagement_GUI {
+
+	public StudentManagement_GUI() {
+		
+	}
+	
+}

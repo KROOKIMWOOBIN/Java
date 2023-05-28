@@ -1,0 +1,13 @@
+package START_POINT;
+
+import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Container;
+
+public class JFRAME
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Hello");
+	}
+}

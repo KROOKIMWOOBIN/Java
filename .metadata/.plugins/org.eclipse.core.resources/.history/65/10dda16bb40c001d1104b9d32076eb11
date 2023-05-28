@@ -1,0 +1,51 @@
+package JAVA_TEST;
+
+class calcul
+{
+	int left, right;
+	static double PI = 3.14;
+	static int base = 0;
+	
+	public void setO(int left, int right) // 왼쪽 오른쪽 대입
+	{
+		this.left = left;
+		this.right = right;
+	}
+	public void sum() // 덧셈
+	{
+		System.out.println(this.left + this.right);
+	}
+	public void age() // 평균
+	{
+		System.out.println((this.left + this.right) / 2);
+	}
+	public void sum2() // 덧셈 + 베이스 값
+	{
+		System.out.println(this.left + this.right + base);
+	}
+}
+
+public class text5
+{
+	public static void main(String[] args)
+	{
+		calcul A1 = new calcul(); // 객체 A1
+		A1.setO(20,40);
+		A1.sum(); // 60 출력
+		A1.age(); // 30 출력
+		System.out.println(A1.PI);
+		
+		calcul A2 = new calcul(); // 객체 A2
+		A2.setO(30,60);
+		A2.sum(); // 90 출력
+		A2.age(); // 45 출력
+		System.out.println(A2.PI);
+		
+		System.out.println(calcul.PI);
+		
+		calcul.base = 10;
+		
+		A1.sum2(); // 70출력
+		A2.sum2(); // 100 출력
+	}
+}

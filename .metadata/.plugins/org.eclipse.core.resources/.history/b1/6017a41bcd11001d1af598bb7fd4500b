@@ -1,0 +1,11 @@
+package package_text3;
+import package_text.*;
+import package_text2.*;
+
+public class D {
+
+	public static void main(String[] args) {
+		B b = new B();
+	}
+
+}

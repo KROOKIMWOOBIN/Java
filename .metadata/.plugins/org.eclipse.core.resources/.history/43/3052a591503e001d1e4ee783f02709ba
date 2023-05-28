@@ -1,0 +1,129 @@
+package Number_baseBall_Game;
+
+import java.util.*;
+import java.io.*;
+
+
+public class Main {
+
+	public static void BASEBALL() {
+
+		int tusu[] = { 0, 1, 2 };
+		int taja[] = { 0, 1, 2 };
+		int strike = 3;
+		int ball = 0;
+
+		Scanner scan = new Scanner(System.in); // 입력 개체 생성
+		Random ran = new Random(); // 랜덤 생성
+
+		for (int i = 0; i <= 2; i++) {
+			tusu[i] = (ran.nextInt(9) + 1); // 1~9까지 랜덤 숫자 입력
+			for (int j = 0; j < i; j++) { // 중복 제거
+				if (tusu[i] == tusu[j]) {
+					i--;
+				}
+			}
+		}
+		for (int i = 1; i <= 9; i++) { // 9이닝 반복
+
+			System.out.println("[ " + i + " BaseBall Game]");
+			System.out.println("1 ~ 9 input...");
+
+			for (int h = 0; h <= 2; h++) { // 타자 입력
+				taja[h] = scan.nextInt();
+				scan.nextInt();
+			}
+
+			for (int j = 0; j <= 2; j++) { // 스트라이크 경우
+				if (taja[j] == tusu[j]) {
+					strike++;
+				} else if (taja[j] != tusu[j]) { // 볼 경우
+					for (int l = 0; l <= 2; l++) {
+						if (taja[j] == tusu[l]) {
+							ball++;
+						}
+					}
+				}
+			}
+			System.out.println("[result]" + " Strike : " + strike + " Ball : " + ball);
+			if (strike >= 3) {
+				System.out.println("** Winner **");
+				break;
+			}
+			if (i == 9) {
+				System.out.println("You are a loser");
+				break;
+			}
+			strike = 0;
+			ball = 0;
+		} // 9회 반복문 끝
+		int choice = 0;
+		
+		System.out.println("Save 1 : O 2 : X");
+		choice = scan.nextInt();
+		scan.nextInt();
+
+		if (choice == 1)
+			ScoreBoard();
+		if (choice == 2)
+			System.out.println("End");
+	}
+
+	public static void ScoreBoard() { // 플레이어 정보 저장
+
+		Scanner scan = new Scanner(System.in);
+		int choice;
+
+		System.out.println("1. Save 2. Load ");
+		choice = scan.nextInt();
+		scan.nextLine();
+
+		if (choice == 1) { // 1은 저장 2은 불러오기
+			
+			try {
+				
+				OutputStream out = new FileOutputStream("C:/baseball.txt");
+				System.out.println("Player ID Input...");
+				String player = scan.nextLine();
+				out.write(player.getBytes());
+				
+			} catch (Exception e) {
+				e.getStackTrace();
+			}
+
+		} else if (choice == 2) {
+			try {
+				
+				File file = new File("C:/baseball.txt");
+				FileReader fr = new FileReader(file);
+				int cur = 0;
+				while((cur = fr.read()) != -1) {
+					System.out.println((char)cur);
+				}
+			} catch (FileNotFoundException e) {
+				e.getStackTrace();
+			} catch (IOException e) {
+				e.getStackTrace();
+			}	
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		int choice;
+
+		System.out.println("1. GAME_START 2. GAME_LIST 3. GAME_STOP");
+		choice = scan.nextInt();
+		scan.nextInt();
+
+		switch (choice) {
+		case 1:
+			BASEBALL();
+		case 2:
+			ScoreBoard(); // https://coding-factory.tistory.com/282
+		case 3:
+			System.exit(0);
+		}
+	}
+}

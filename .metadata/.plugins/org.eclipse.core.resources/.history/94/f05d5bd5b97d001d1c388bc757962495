@@ -1,0 +1,56 @@
+package JT_1_2_1;
+
+import java.util.*;
+
+class Test2{
+	
+	private int a;
+	private int b;
+	
+	public Test2() {
+		
+	}
+	
+	public Test2(int a, int b) {
+		this.a = a;
+		this.b = b;
+	}
+	
+	public int getA() {
+		return a;
+	}
+	public void setA(int a) {
+		this.a = a;
+	}
+	public int getB() {
+		return b;
+	}
+	public void setB(int b) {
+		this.b = b;
+	}
+	
+	public int sum(int a, int b) {
+		return a + b;
+	}
+	
+}
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		ArrayList<Test2> ml = new ArrayList<Test2>();
+		Test2 ts = new Test2();
+		for(int i = 0; i < 3; i++) {
+			System.out.print("숫자 2개 입력 >>> ");
+			ts.setA(sc.nextInt());
+			ts.setB(sc.nextInt());
+			ts.sum(ts.getA(), ts.getB());
+			ml.add(ts);
+		}
+		
+	}
+	
+}

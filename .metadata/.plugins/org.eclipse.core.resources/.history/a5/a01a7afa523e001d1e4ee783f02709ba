@@ -1,0 +1,37 @@
+package Number_baseBall_Game;
+
+import java.util.*;
+import java.io.*;
+
+public class Main2 {
+
+	static Scanner scan = new Scanner(System.in);
+	static Random rand = new Random(); 
+	
+	public static void baseball() {
+		
+		try {
+			
+			File file = new File("C:/baseball.txt");
+			FileReader fr = new FileReader(file);
+			
+			
+		} catch (FileNotFoundException e) {
+			e.getStackTrace();
+		} catch (IOException e) {
+			e.getStackTrace();
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		int choice = scan.nextInt();
+		
+		switch(choice) {
+		case 1 : baseball();
+		case 2 :
+		case 3 : System.exit(0);
+		}
+	}
+}

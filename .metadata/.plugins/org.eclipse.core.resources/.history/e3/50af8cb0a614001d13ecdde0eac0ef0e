@@ -1,0 +1,22 @@
+package START_POINT1;
+
+import java.awt.*;
+
+public class FRAME_START
+{
+	FRAME_START()
+	{
+		
+	}
+	void setSize(int A,int B)
+	{
+		System.out.println(A * B);
+	}
+	public static void main(String[] args)
+	{
+		FRAME_START window = new FRAME_START();
+		
+		window.setSize(300, 500);
+	}
+
+}

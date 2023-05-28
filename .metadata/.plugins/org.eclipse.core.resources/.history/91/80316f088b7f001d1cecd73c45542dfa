@@ -1,0 +1,26 @@
+package JT_1_2_1;
+
+public class SmartPhone extends Phone{
+	//변수
+	private int 소프트웨어_버전;
+	//생성자
+	public SmartPhone() {}
+	
+	public SmartPhone(int 소프트웨어_버전,String 전화번호) {
+		super(전화번호);
+		this.소프트웨어_버전 = 소프트웨어_버전;
+	}
+
+	public int get소프트웨어_버전() {
+		return 소프트웨어_버전;
+	}
+
+	public void set소프트웨어_버전(int 소프트웨어_버전) {
+		this.소프트웨어_버전 = 소프트웨어_버전;
+	}
+
+	@Override
+	public String toString() {
+		return "SmartPhone [소프트웨어_버전=" + 소프트웨어_버전 + "]" + " 전화번호 : " + get전화번호();
+	}
+}

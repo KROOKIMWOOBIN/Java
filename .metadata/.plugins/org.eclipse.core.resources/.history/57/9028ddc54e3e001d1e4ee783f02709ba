@@ -1,0 +1,16 @@
+package Number_baseBall_Game;
+
+import java.util.*;
+import java.io.*;
+
+public class Main2 {
+
+	Scanner scan = new Scanner(System.in);
+	Random rand = new Random(); 
+	
+	public static void main(String[] args) {
+		
+		int choice = scan.nextInt();
+		
+	}
+}

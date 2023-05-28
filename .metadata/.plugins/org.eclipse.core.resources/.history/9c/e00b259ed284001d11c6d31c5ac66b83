@@ -1,0 +1,10 @@
+package Game;
+
+import java.lang.System.Logger;
+import java.util.logging.*;
+
+public class Log {
+
+	private final static Logger log = Logger.getLogger();
+	
+}

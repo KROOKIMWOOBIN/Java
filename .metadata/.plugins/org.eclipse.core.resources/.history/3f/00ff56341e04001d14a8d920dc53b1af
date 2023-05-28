@@ -1,0 +1,15 @@
+package JAVA_TEST;
+
+public class JAVA_A1
+{
+	public static void name(int num)
+	{
+		num = 1423;
+		System.out.println(num);
+	}
+	
+	public static void main(String[] args)
+	{
+		name(1);
+	}
+}

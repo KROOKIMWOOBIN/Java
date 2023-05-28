@@ -1,0 +1,12 @@
+package START_POINT1;
+
+import java.awt.*;
+
+public class FRAME_START
+{
+	public static void main(String[] args)
+	{
+
+	}
+
+}

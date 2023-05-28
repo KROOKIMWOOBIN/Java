@@ -1,0 +1,118 @@
+package Number_baseBall_Game;
+
+import java.util.*;
+import java.io.*;
+
+public class Main2 {
+
+	static Scanner scan = new Scanner(System.in);
+	static Random rand = new Random(); 
+	static String player;
+	static int check = 0; // 이닝 체크
+	static int check2 = 0; // 승리 체크
+	
+	public static int Baseball_Game() {
+		
+		int tusu[] = { 0, 1, 2};
+		int taja[] = { 0, 1, 2};
+		int strike = 3;
+		int ball = 0;
+		
+		for(int i = 0; i < 3; i++) { // 1~9에서 3개의 랜덤숫자생성
+			tusu[i] = (rand.nextInt(9) + 1);
+			for(int j = 0; j < i; j++) { // 숫자중복제거
+				if(tusu[i] == tusu[j]) {
+					i--;
+				}
+			}
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			
+			System.out.println("[Baseball Game " + i + " ]"); // 이닝 카운터
+			
+			System.out.println("1 ~ 9 Input...");
+			for(int a1 = 0; a1 < 3; a1++) { // 타자입력
+				taja[a1] = scan.nextInt();
+			}
+			for(int a2 = 0; a2 < 3; a2++) { // 스트라이크/볼 체크
+				if(taja[a2] == tusu[a2]) { // 스트라이크 경우
+					strike++;
+				}
+				else if(taja[a2] != tusu[a2]) { // 볼 경우
+					for(int a3 = 0; a3 < 3; a3++) {
+						if(taja[a2] == tusu[a3]) {
+							ball++;
+						}
+					}
+				}
+			}
+			System.out.println("[result] Strike : " + strike + " Ball : " + ball);
+			if(strike >= 3) { // 승리시
+				System.out.println("** Winner **");
+				check2++;
+				break;
+			}
+			if(i == 9) { // 패배시
+				System.out.println("You are a loser");
+				break;
+			}
+			strike = 0;
+			ball = 0;
+			check++;
+		} // 9이닝 끝
+		if(check2 == 1) { // 승리/패배 구분
+			try {
+				OutputStream out = new FileOutputStream("C/baseball");
+				System.out.println("Player Input...");
+				player = scan.nextLine();
+				out.write(player.getBytes());
+			} catch (Exception e) {
+				e.getStackTrace();
+			}
+			try {
+				PrintWriter load = new PrintWriter("C:/baseball.txt");
+				load.println(player + "," + check);
+				load.close();
+			} catch (FileNotFoundException e) {
+				e.getStackTrace();
+			} catch (IOException e) {
+				e.getStackTrace();
+			} catch (Exception e) {
+				e.getStackTrace();
+			}
+			scan.close(); // 플레이어 이름 입력종료
+		}
+		check = 0;
+		check2 = 0;
+		
+		return 0;
+	}
+	
+	public static void ScoreBoard() {
+		try {
+			PrintWriter load = new PrintWriter("C:/baseball.txt");
+			load.println(player + "," + check);
+			load.close();
+		} catch (FileNotFoundException e) {
+			e.getStackTrace();
+		} catch (IOException e) {
+			e.getStackTrace();
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		System.out.println("1. Start 2. Load 3. Exit");
+		int choice = scan.nextInt();
+		
+		switch(choice) {
+		case 1 : Baseball_Game();
+		case 2 : ScoreBoard();
+		case 3 : System.exit(0);
+		}
+		scan.close(); // 선택 입력 종료
+	}
+}

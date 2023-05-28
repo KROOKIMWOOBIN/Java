@@ -1,0 +1,22 @@
+package JAVA_TEST;
+
+class multi extends calcul
+{
+	public void multiplay()
+	{
+		System.out.println(this.left * this.right);
+	}
+}
+
+public class sang1 {
+
+	public static void main(String[] args) {
+		multi A1 = new multi();
+		A1.setO(10, 20);
+		A1.sum();
+		A1.age();
+		A1.multiplay();
+		
+	}
+
+}

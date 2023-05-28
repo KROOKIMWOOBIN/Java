@@ -1,0 +1,40 @@
+package Number_baseBall_Game;
+
+import java.util.*;
+import java.io.*;
+
+public class Text {
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("1. Save 2. Load");
+		int choice = scan.nextInt();
+		switch(choice) {
+		case 1 : 
+			try {
+			
+			OutputStream out = new FileOutputStream("C:/text.txt");
+			String player = scan.nextLine();
+			out.write(player.getBytes());
+			
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+		case 2 :
+			try {
+				
+				File file = new File("C:/text.txt");
+				FileReader fr = new FileReader(file);
+				int lead = 0;
+				while((lead = fr.read()) != -1) {
+					System.out.println((char)lead);
+				}
+			} catch (FileNotFoundException e) {
+				e.getStackTrace();
+			} catch (IOException e) {
+				e.getStackTrace();
+			}	
+		}		
+	}
+}

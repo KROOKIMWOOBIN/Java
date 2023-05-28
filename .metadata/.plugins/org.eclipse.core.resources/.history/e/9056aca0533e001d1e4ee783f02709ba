@@ -1,0 +1,88 @@
+package Number_baseBall_Game;
+
+import java.util.*;
+import java.io.*;
+
+public class Main2 {
+
+	static Scanner scan = new Scanner(System.in);
+	static Random rand = new Random(); 
+	
+	public static void Baseball_Game() {
+		
+		int tusu[] = { 0, 1, 2};
+		int taja[] = { 0, 1, 2};
+		int strike = 0;
+		int ball = 0;
+		String player;
+		
+		for(int i = 0; i < 3; i++) { // 1~9에서 3개의 랜덤숫자생성
+			tusu[i] = (rand.nextInt(9) + 1);
+			for(int j = 0; j < i; j++) { // 숫자중복제거
+				if(tusu[i] == tusu[j]) {
+					i--;
+				}
+			}
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			
+			System.out.println("[Baseball Game " + i + " ]"); // 이닝 카운터
+			
+			System.out.println("1 ~ 9 Input...");
+			for(int a1 = 0; a1 < 3; a1++) { // 타자입력
+				taja[a1] = scan.nextInt();
+				scan.nextInt();
+			}
+			
+			for(int a2 = 0; a2 < 3; a2++) { // 스트라이크/볼 체크
+				if(taja[a2] == tusu[a2]) { // 스트라이크 경우
+					strike++;
+				}
+				else if(taja[a2] != tusu[a2]) { // 볼 경우
+					for(int a3 = 0; a3 < 3; a3++) {
+						if(taja[a2] == tusu[a3]) {
+							ball++;
+						}
+					}
+				}
+			}
+			System.out.println("[result] Strike : " + strike + " Ball : " + ball);
+			if(strike == 3) { // 승리시
+				System.out.println("** Winner **");
+				System.out.println("Player Id Input...");
+				
+				try {
+					
+					FileWriter out = new FileWriter("C:/baseball.txt");
+					player = scan.nextLine();
+					scan.nextLine();
+					out.write(player);
+					
+				} catch (Exception e) {
+					e.getStackTrace();
+				}
+				
+				
+				
+			}
+			if(i == 9) { // 패배시
+				System.out.println("You are a loser");
+				break;
+			}
+			strike = 0;
+			ball = 0;
+		} // 9이닝 끝
+	}
+	
+	public static void main(String[] args) {
+		
+		int choice = scan.nextInt();
+		
+		switch(choice) {
+		case 1 : Baseball_Game();
+		case 2 :
+		case 3 : System.exit(0);
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package START_POINT;
+
+import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Container;
+
+public class JFRAME
+{
+	public static void main(String[] args)
+	{
+		JFRAME window = new JFRAME();
+		window.setBounds(800, 100, 400, 200);
+	}
+}

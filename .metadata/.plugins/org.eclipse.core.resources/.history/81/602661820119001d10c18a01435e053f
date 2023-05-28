@@ -1,0 +1,20 @@
+package START_POINT1;
+
+import javax.swing.JFrame;
+
+public class FRAME_START extends JFrame // 상속받아서 JFrame을 가져온다
+{
+	public static void main(String[] args)
+	{
+		new FRAME_START();
+	}
+	
+	public FRAME_START() {
+		super("창 띄우기 예제");
+		this.setSize(500, 500);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
+
+}

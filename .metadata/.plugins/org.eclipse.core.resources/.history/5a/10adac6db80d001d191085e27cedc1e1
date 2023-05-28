@@ -1,0 +1,36 @@
+package JAVA_TEST;
+
+class multi extends calcul
+{
+	public void multiplay()
+	{
+		System.out.println(this.left * this.right);
+	}
+}
+class division extends multi
+{
+	public void division()
+	{
+		System.out.println(this.left / this.right);
+	}
+}
+
+public class sang1 {
+
+	public static void main(String[] args) {
+		multi A1 = new multi();
+		A1.setO(10, 20);
+		A1.sum();
+		A1.age();
+		A1.multiplay();
+		
+		division A2 = new division();
+		A2.setO(10, 20);
+		A2.sum();
+		A2.age();
+		A2.multiplay();
+		A2.division();
+		
+	}
+
+}

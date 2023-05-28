@@ -1,0 +1,18 @@
+package JT_1_2_1;
+
+public class Test1{
+	
+	public static void main(String[] args) {
+		
+		String word = "Dongyang"; // 0부터 7까지
+		// word.length()를 쓰면 8개라고 인식해서 8이야
+		for(int i = word.length() - 1;i >= 0; i--) {
+		//       i가 7일 때             i가 0까지 계속 빼주겠다.
+		//	System.out.print(word.charAt(i));
+			if(Character.isUpperCase(word.charAt(i))) { // 대문자면 1 소문자면 0
+				System.out.print(Character.toLowerCase(word.charAt(i))); // 대문자를 소문자로 전환
+			}
+		
+		}
+	}
+}

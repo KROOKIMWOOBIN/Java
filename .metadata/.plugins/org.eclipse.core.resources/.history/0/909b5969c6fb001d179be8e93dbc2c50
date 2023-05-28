@@ -1,0 +1,9 @@
+package StudentManagement;
+
+public class StudentManagement_GUI {
+
+	public StudentManagement_GUI() {
+		
+	}
+	
+}

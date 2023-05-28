@@ -1,0 +1,13 @@
+package START_POINT;
+
+import java.awt.Frame;
+
+public class JFRAME
+{
+	public static void main(String[] args)
+	{
+		JFRAME window = new JFRAME(); // 윈도우라는 객체 생성
+		
+		window.setTitle("첫 번째 프레임 입니다.");
+	}
+}
