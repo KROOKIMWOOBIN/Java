@@ -1,9 +1,0 @@
-package StudentManagement;
-
-public class StudentManagement_Main {
-
-	public static void main(String[] args) {
-		public StudentManagement_GUI();
-	}
-
-}

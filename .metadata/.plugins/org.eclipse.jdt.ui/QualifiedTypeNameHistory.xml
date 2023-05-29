@@ -50,4 +50,9 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="StudentManagement.DB_Connect"/>
     <fullyQualifiedTypeName name="StudentManagement.StudentManagement_GUI"/>
+    <fullyQualifiedTypeName name="StudentManagementSystem.StudentManagement_GUI"/>
+    <fullyQualifiedTypeName name="Level_1.ReverseIntegertoArray"/>
+    <fullyQualifiedTypeName name="Level_2.NumberConversion"/>
+    <fullyQualifiedTypeName name="Level_1.N_Numbers_Spaced_By_X.Solutin"/>
+    <fullyQualifiedTypeName name="Level_1.N_Numbers_Spaced_By_X"/>
 </qualifiedTypeNameHistroy>
