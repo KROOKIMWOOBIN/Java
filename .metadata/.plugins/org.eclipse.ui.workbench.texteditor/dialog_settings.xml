@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="btn4"/>
+		<item key="selection" value="package Level_0;"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="package Level_0;"/>
 			<item value="btn4"/>
 			<item value="btn3"/>
 			<item value="package NBG;"/>
@@ -15,7 +16,6 @@
 			<item value="&#x09;&#x09;String player = scan.nextLine();"/>
 			<item value="&#x09;static void a()"/>
 			<item value="static_variable"/>
-			<item value="import javax.swing.*;   "/>
 		</list>
 		<list key="replacehistory">
 			<item value="text_class"/>
