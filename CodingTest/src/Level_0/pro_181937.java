@@ -2,9 +2,13 @@ package Level_0;
 
 public class pro_181937 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	public static int solution(int num, int n) {
+        
+        if(num % n == 0) {
+        	return 1;
+        }
+        
+        return 0;
+    }
 
 }
