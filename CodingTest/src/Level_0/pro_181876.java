@@ -2,9 +2,10 @@ package Level_0;
 
 public class pro_181876 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	public static String solution(String myString) {
+        String answer = myString.toLowerCase();
+        
+        return answer;
+    }
 
 }
