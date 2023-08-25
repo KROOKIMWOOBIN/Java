@@ -1,0 +1,11 @@
+package BAEKJOON;
+
+import java.util.*;
+
+public class problem_1039 
+{
+	public static void main(String[] args)
+	{
+		int input
+	}
+}

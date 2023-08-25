@@ -13,7 +13,6 @@ public class pro_181928 {
         		sum2 += Integer.toString(num_list[i]);
         	}
         }
-        
         return answer = Integer.parseInt(sum1) + Integer.parseInt(sum2);
     }
 }
