@@ -8,7 +8,7 @@ public class problem_27433
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int num = Integer.parseInt(br.readLine());
-		System.out.println(factorial(num));
+		factorial(num);
 	}
 	public static long factorial(int num)
 	{
