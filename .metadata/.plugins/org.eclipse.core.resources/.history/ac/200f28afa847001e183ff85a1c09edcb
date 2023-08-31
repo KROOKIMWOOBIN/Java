@@ -7,14 +7,14 @@ public class problem_2798
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
-        System.out.print("CardSize >>> ");
+        System.out.print("카드 개수 입력 >>> ");
         int n = sc.nextInt();
-        System.out.print("Card sum >>> ");
+        System.out.print("카드 합 입력 >>> ");
         int m = sc.nextInt();
         int[] cards = new int[n];
         for (int i = 0; i < n; i++) 
         {
-        	System.out.print(i + "nd card input >>> ");
+        	System.out.print(i + "번째 카드 입력 >>> ");
             cards[i] = sc.nextInt();
         }
 

@@ -7,9 +7,9 @@ public class problem_2798
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
-        System.out.print("CardSize >>> ");
+        System.out.print("input cardlistsize >>> ");
         int n = sc.nextInt();
-        System.out.print("Card sum >>> ");
+        System.out.print("card sum >>> ");
         int m = sc.nextInt();
         int[] cards = new int[n];
         for (int i = 0; i < n; i++) 
