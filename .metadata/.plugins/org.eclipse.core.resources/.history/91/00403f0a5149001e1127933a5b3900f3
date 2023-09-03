@@ -27,6 +27,6 @@ public class problem_25305
 				}
 			}
 		}
-		System.out.println(p[k - 1]);
+		System.out.println(p[k]);
 	}
 }

@@ -1,0 +1,34 @@
+package BAEKJOON;
+
+import java.util.Scanner;
+
+public class problem_2751 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int num[] = new int[n];
+		int sw;
+		for(int i = 0; i < n; i++)
+		{
+			num[i] = sc.nextInt();
+		}
+		for(int i = 0; i < n; i++)
+		{
+			for(int j = 0; j < n; j++)
+			{
+				if(num[j] > num[i])
+				{
+					sw = num[i];
+					num[i] = num[j];
+					num[j] = sw;
+				}
+			}
+		}
+		for(int i = 0; i < n; i++)
+		{
+			System.out.println(num[i]);
+		}
+	}
+}
