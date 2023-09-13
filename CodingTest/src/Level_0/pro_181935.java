@@ -1,6 +1,6 @@
-package BAEKJOON;
+package Level_0;
 
-public class problem_2751 {
+public class pro_181935 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
