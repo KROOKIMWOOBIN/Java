@@ -1,0 +1,45 @@
+스트림
+1. 스트림은 1회용이다.
+    Stream에 대해 최종연산을 수행하면 stream은 닫힌다.
+
+import java.util.*;
+import java.util.stream.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		List<Integer> list = Arrays.asList(1,2,3,4,5);
+		Stream<Integer> intStream = list.stream();
+		intStream.forEach((i) -> System.out.print(i));
+	}
+}
+를 메서드 참조하면 
+import java.util.*;
+import java.util.stream.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		List<Integer> list = Arrays.asList(1,2,3,4,5);
+		Stream<Integer> intStream = list.stream();
+		intStream.forEach(System.out::print);
+
+		Stream<String> strStream = Stream.of(new String[] {"a","b","c"});
+		strStream.forEach(System.out::println);
+
+		IntStream intStream1 = new Random().ints(); // 무한 스트림
+		intStream1.limit(5).forEach(System.out::print);
+		IntStream intStream2 = new Random().ints(5); // 유한 스트림
+		intStream2.limit(5).forEach(System.out::print);
+
+
+		// iterate(T seed, UnaryOperator f) 단항 연산자
+		Stream<Integer> intStream3 = Stream.iterate(0, n -> n + 2);
+		intStream3.limit(5).forEach(System.out::println);
+		// generate(Supplier s) : 주기만 하는것 출력O
+		Stream<Integer> intStream4 = Stream.generate(() -> 1);
+		intStream4.limit(5).forEach(System.out::println);
+	}
+}
+가 가능하다. 단! 한번 최종 연산을 하면 이후로 스트림을 사용 불가
+다시 사용할려면 또 스트림을 생성해야 한다.
