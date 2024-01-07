@@ -1,0 +1,19 @@
+1. getAsLong(): Optional 객체의 값을 long 타입으로 변환하여 반환합니다.
+
+2. getAsDouble(): Optional 객체의 값을 double 타입으로 변환하여 반환합니다.
+
+3. mapToInt(): 스트림의 요소들을 int 타입으로 변환한 IntStream을 반환합니다.
+
+4. mapToLong(): 스트림의 요소들을 long 타입으로 변환한 LongStream을 반환합니다.
+
+5. mapToDouble(): 스트림의 요소들을 double 타입으로 변환한 DoubleStream을 반환합니다.
+
+6. toArray(): 스트림의 요소들을 배열로 변환하여 반환합니다. 반환 타입은 T[]입니다.
+
+7. collect(): 스트림의 요소들을 지정한 컬렉션으로 수집합니다. 반환 타입은 지정한 컬렉션 타입입니다.
+
+8. orElse(): Optional 객체가 비어있을 경우 기본값을 반환합니다.
+
+9. orElseGet(): Optional 객체가 비어있을 경우 Supplier 함수를 통해 기본값을 생성하여 반환합니다.
+
+10. orElseThrow(): Optional 객체가 비어있을 경우 예외를 발생시킵니다.

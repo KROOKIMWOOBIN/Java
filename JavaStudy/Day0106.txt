@@ -1,0 +1,88 @@
+람다식 -> 함수형 인터페이스
+
+함수형 인터페이스 특징
+- 하나의 메서드만 존재
+
+예시
+public class Main
+{
+	public static void main(String[] args) {
+		Function f = (a, b) -> System.out.print(a + b);
+		f.sum(10, 5);
+	}
+}
+
+interface Function {
+    public void sum(int a, int b);
+}
+
+스트림 특징
+1. 스트림 만들기
+2. 중간 연산 (N번)
+3. 최종 연산 (1번)
+
+스트림 만들기
+
+1. 컬렉션(Collection)으로부터 스트림 생성
+	List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+	Stream<Integer> stream1 = numbers.stream();
+
+2. 배열로부터 스트림 생성
+	int[] array = {1, 2, 3, 4, 5};
+	IntStream stream2 = Arrays.stream(array);
+
+3. 지정된 요소로 스트림 생성
+	Stream<String> stream3 = Stream.of("apple", "banana", "orange");
+
+4. 숫자 범위로부터 스트림 생성
+	IntStream stream4 = IntStream.range(1, 10); // 1부터 9까지의 숫자 스트림
+
+5. 파일로부터 스트림 생성
+	Path path = Paths.get("file.txt");
+	Stream<String> lines = Files.lines(path);
+
+6. 랜덤한 요소로 무한 스트림 생성
+	Stream<Integer> randomStream = Stream.generate(() -> new Random().nextInt());
+
+중간 연산
+1. Stream<T> distinct() // 중복을 제거
+
+2. Stream<T> filter(Predicate<T> predicate) // 조건에 안 맞는 요소 제외
+
+3. Stream<T> limit(long maxSize) // 스트림의 일부를 잘라낸다.
+
+4. Stream<T> skip(long n) // 스트림의 일부를 건너뛴다.
+
+5. Stream<T> peek(Consumer<T> action) // 스트림의 요소에 작업 수행
+
+6. Stream<T> sorted(Comparator<T> action) // 스트림의 요소를 정렬한다.
+
+최종 연산
+
+1. forEach: 각 요소에 대해 주어진 동작을 수행합니다. 
+	요소를 소비하며 반환값이 없습니다.
+
+2. count: 스트림의 요소 개수를 반환합니다.
+
+3. collect: 스트림의 요소를 수집하여 컬렉션(List, Set, Map 등)이나 
+	문자열 등으로 변환합니다.
+
+4. reduce: 스트림의 요소를 축소하여 단일 값을 반환합니다. 
+	주어진 연산을 사용하여 요소를 반복적으로 처리합니다.
+
+5. min과 max: 스트림의 요소 중 최솟값 또는 최댓값을 반환합니다. 
+	요소의 비교를 위해 Comparator를 사용할 수 있습니다.
+
+6. findFirst와 findAny: 스트림의 요소 중 첫 번째 요소를 반환합니다. 
+	병렬 스트림에서는 findAny가 더 효율적일 수 있습니다.
+
+7. anyMatch, allMatch, noneMatch: 주어진 조건을 만족하는 요소의 존재 여부를 반환합니다. 
+	anyMatch는 하나 이상의 요소가 조건을 만족하면 true를 반환하고, 
+	allMatch는 모든 요소가 조건을 만족하면 true를 반환합니다. 
+	noneMatch는 모든 요소가 조건을 만족하지 않으면 true를 반환합니다.
+
+8. toArray: 스트림의 요소를 배열로 변환합니다.
+
+9. max, min, average, sum: 숫자 요소를 다룰 때 사용되는 연산입니다. 
+	max는 최댓값, min은 최솟값, average는 평균값, sum은 합계를 반환합니다.
+
