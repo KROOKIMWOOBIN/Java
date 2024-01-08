@@ -1,0 +1,11 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Solution {
+    public int[] solution(int[] arr, int[] delete_list) {
+        return Arrays.stream(arr)
+            .filter(num1 -> Arrays.stream(delete_list)
+                    .noneMatch(num2 -> num2 == num1))
+            .toArray();
+    }
+}

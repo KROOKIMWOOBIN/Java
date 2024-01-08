@@ -1,22 +1,8 @@
-람다식 -> 함수형 인터페이스
-
-함수형 인터페이스 특징
-- 하나의 메서드만 존재
-
-예시
-public class Main
-{
-	public static void main(String[] args) {
-		Function f = (a, b) -> System.out.print(a + b);
-		f.sum(10, 5);
-	}
-}
-
-interface Function {
-    public void sum(int a, int b);
-}
-
 스트림 특징
+1. 스트림은 1회용이다.
+    Stream에 대해 최종연산을 수행하면 stream은 닫힌다.
+
+스트림 사용법
 1. 스트림 만들기
 2. 중간 연산 (N번)
 3. 최종 연산 (1번)
@@ -85,4 +71,3 @@ interface Function {
 
 9. max, min, average, sum: 숫자 요소를 다룰 때 사용되는 연산입니다. 
 	max는 최댓값, min은 최솟값, average는 평균값, sum은 합계를 반환합니다.
-
