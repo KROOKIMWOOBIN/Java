@@ -1,0 +1,17 @@
+Comparable
+- 객체 자체가 이미 정렬 기준을 갖고 있을 때 사용
+- compareTo() 메서드를 정의하여 다른 객체와의 비교 로직을 구현
+
+사용 방법
+public class Age implements Comparable<Age> {
+	int age = 0;
+
+	Age(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public int compareTo(Age o) {
+		return this.age - o.age;
+	}
+}

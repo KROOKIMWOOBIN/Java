@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(String s) {
+        int[] answer = new int[s.length()];
+        Arrays.fill(answer, -1); // 모든 배열을 -1로 초기화
+        
+        int[] lastIndex = new int[26]; // 알파벳 숫자 길이
+        Arrays.fill(lastIndex, -1);
+        
+        for(int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            
+            if(lastIndex[c - 'a'] != -1){
+                answer[i] = i - lastIndex[c - 'a'];
+            }
+            
+            lastIndex[c - 'a'] = i;
+        }
+        
+        return answer;
+    }
+}

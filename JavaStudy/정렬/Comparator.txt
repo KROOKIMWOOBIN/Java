@@ -1,0 +1,36 @@
+Comparator
+- 객체의 정렬 기준을 외부에서 별도로 제공
+- 정렬의 기준을 유연하게 변경하고자 할 때 유용
+
+사용예시
+public class Main {
+    public static void main(String[] args) {
+
+        Person person1 = new Person(25);
+        Person person2 = new Person(30);
+        Person person3 = new Person(20);
+
+        List<Person> personList = new ArrayList<>();
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
+
+        // Comparator를 사용하여 나이로 정렬
+        Comparator<Person> ageComparator = Comparator.comparingInt(person -> person.age);
+        Collections.sort(personList, ageComparator);
+
+        // 정렬된 결과 출력
+        for (Person person : personList) {
+            System.out.println("나이 : " + person.age);
+        }
+    }
+}
+
+class Person {
+
+    public int age;
+
+    public Person(int age) {
+        this.age = age;
+    }
+}
