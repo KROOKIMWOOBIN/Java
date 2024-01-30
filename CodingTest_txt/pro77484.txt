@@ -1,0 +1,23 @@
+class Solution {
+    public int[] solution(int[] lottos, int[] win_nums) {
+        
+        int check = 0;
+        int lucky = 0;
+        
+        for(int i : lottos){
+            if(i == 0) lucky++;
+            for(int j : win_nums){
+                if(i == j) check++;
+            }
+        }
+        
+        int best = 7 - check - lucky;
+        int bad = 7 - check;
+        
+        if(best < 1) best = 1;
+        else if(best > 6) best = 6;
+        if(bad > 6) bad = 6;
+        
+        return new int[]{best, bad};
+    }
+}
