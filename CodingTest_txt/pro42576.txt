@@ -1,0 +1,29 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        
+        HashMap<String, Integer> map = new HashMap<>();
+        
+	// participant들을 키로하고 키에 값을 1로 설정
+        for(String p : participant){
+            map.put(p, map.getOrDefault(p, 0) + 1);
+        }
+        
+	// completion들을 키로하고 키에 값을 0으로 변경
+        for(String c : completion){
+            map.put(c, map.get(c) - 1);
+        }
+
+	// 0이 아닌 값을 찾아 answer에 넣어주고 브레이크
+        for(String key : map.keySet()){
+            if(map.get(key) != 0){
+                answer = key;
+                break;
+            }
+        }
+        
+        return answer;
+    }
+}
