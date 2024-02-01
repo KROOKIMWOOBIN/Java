@@ -1,0 +1,47 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(String[] keymap, String[] targets) {
+        int[] answer = new int[targets.length];
+        
+        HashMap<Character, Integer> map = new HashMap<>();
+        
+        for(int i = 0; i < keymap.length; i++){
+            for(int j = 0; j < keymap[i].length(); j++){
+                char c = keymap[i].charAt(j);
+                if(!map.containsKey(c)) map.put(c, j + 1);
+                else{
+                    int index = map.get(c);
+                    map.put(c, Math.min(index, j + 1));
+                }
+            }
+        }
+        
+        for(int i = 0; i < targets.length; i++){
+            String target = targets[i];
+            int count = 0;
+            boolean flag = true;
+            for(char c : target.toCharArray()){
+                if(map.containsKey(c)) count += map.get(c);
+                else{
+                    flag = false;
+                    break;
+                }
+            }
+            
+            answer[i] = flag == false ? -1 : count;
+        }
+        
+        return answer;
+    }
+}
+
+/*
+1. HashMap을 사용하여 키와 값으로 맵을 만든다. (단 이미 존재하는 키가 있을 경우 더 작은 경우를 사용한다.
+2. 전체 맵을 돌아다니며 count에 더해주고 만약 값이 없으면 flag를 false로 바꿔준다.
+3. answer[i]에 flag가 false인지 확인한 후 맞으면 -1 아니면 count값을 넣어준다.
+
+몰랐던 메소드
+1. toCharArray()
+2. containsKey()
+*/
