@@ -16,7 +16,7 @@ class Solution {
 
         // 3단계
         String step3 = step2.toString().replace("..", ".");
-        while (step3.contains("..")) {
+        while (step3.contains("..")) { // 해당 문자열에 특정 문자가 포함되어 있는지 확인하는 메소드
             step3 = step3.replace("..", ".");
         }
 
