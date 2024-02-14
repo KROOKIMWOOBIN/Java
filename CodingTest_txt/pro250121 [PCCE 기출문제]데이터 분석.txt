@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution {
+    public int[][] solution(int[][] data, String ext, int val_ext, String sort_by) {
+        Map<String, Integer> order = new HashMap<>();
+        order.put("code", 0);
+        order.put("date", 1);
+        order.put("maximum", 2);
+        order.put("remain", 3);
+        
+        List<int []> filterData = new ArrayList<>(); // 정렬된 데이터를 담을 리스트 생성
+        for(int[] d : data){ // 데이터를 1개씩 담으면서 반복문 돌음
+            if(d[order.get(ext)] < val_ext) filterData.add(d); // 데이터를 꺼내와 조건에 맞으면 추가 
+        }
+        
+        filterData.sort(Comparator.comparingInt(arr -> arr[order.get(sort_by)])); // 스트림을 사용하여 sort_by를 기준으로 정렬
+        
+        return filterData.toArray(new int[0][]); // 배열로 반환
+    }
+}
