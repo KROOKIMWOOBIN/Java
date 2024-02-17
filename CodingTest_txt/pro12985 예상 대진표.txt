@@ -1,0 +1,21 @@
+class Solution
+{
+    public int solution(int n, int a, int b)
+    {
+        int answer = 0;
+
+        while(a != b){
+            a = a / 2 + a % 2;
+            b = b / 2 + b % 2;
+            answer++;
+        }
+        
+        return answer;
+    }
+}
+
+/*
+	무조건 A랑 B랑 만나야하는 수밖에 없으므로
+	a랑 b가 같아질 때까지 1라운드를 이기면 절반으로 숫자를 나누고 나머지 수를 더해주면
+	마지막에는 숫자가 같아진다.
+*/
