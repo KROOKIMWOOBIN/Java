@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int k, int[] tangerine) {
+        int answer = 0;
+	int sum = 0;
+        
+        Map<Integer, Integer> map = new HashMap<>(); // 해당 값에 대한 개수를 구함
+        
+        for(int i : tangerine){
+            map.put(i, map.getOrDefault(i ,0) + 1);
+        }
+	List<Integer> list = new ArrayList<>(map.values()); // 개수에 대해 내림차순으로 정렬
+	Collections.sort(list, Collections.reverseOrder());
+        
+	for(int l : list){ // 가장 많은 거 부터 카운트
+		if(sum + l >= k){
+			answer++;
+			break;
+		}else{
+			sum += l;
+			answer++;
+		}
+	}
+        return answer; 
+    }
+}
