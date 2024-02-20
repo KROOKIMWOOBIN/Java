@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Solution {
+    public String[] solution(String[] players, String[] callings) {
+        Map<String, Integer> ranking = new HashMap<>();
+        
+        for(int i = 0; i < players.length; i++) ranking.put(players[i], i + 1);
+        
+        for(String p : callings){
+            int nextR = ranking.get(p);
+            String nextP = players[nextR - 2];
+            // 앞에 사람을 1칸 뒤로
+            ranking.replace(nextP, nextR);
+            players[nextR - 1] = nextP;
+            // 뒤에 사람을 1칸 앞으로
+            ranking.replace(p, nextR - 1);
+            players[nextR - 2] = p;
+        }
+        return players;
+    }
+}
