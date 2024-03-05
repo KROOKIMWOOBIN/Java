@@ -1,0 +1,14 @@
+import java.util.HashMap;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = nums.length / 2;
+        
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int i : nums) map.put(i, map.getOrDefault(i, 1) + 1);
+        if(answer >= map.size()) return map.size();
+        
+        return answer;
+    }
+}
