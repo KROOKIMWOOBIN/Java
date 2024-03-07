@@ -1,0 +1,32 @@
+import java.util.HashMap;
+
+class Solution {
+    public int solution(int[] bandage, int health, int[][] attacks) {
+        int answer = health;
+        int endTime = 0;
+        int timeCheck = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int[] attack : attacks){
+            map.put(attack[0], attack[1]);
+            endTime = attack[0];
+        }
+        
+        for(int i = 1; i <= endTime; i++){
+            if(map.containsKey(i)){
+                answer -= map.get(i);
+                timeCheck = 0;
+            }else{
+                timeCheck++;
+                answer += bandage[1];
+                if(timeCheck == bandage[0]){
+                    answer += bandage[2];
+                    timeCheck = 0;
+                }
+                if(answer > health) answer = health;
+            }
+            if(answer <= 0) return -1;
+        }
+        return answer;
+    }
+}
